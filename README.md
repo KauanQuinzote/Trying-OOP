@@ -6,11 +6,6 @@
   <img width="50" height="80"
        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
        alt="TypeScript logo" />
-
-  <!-- JSON (Devicon) -->
-  <img width="50" height="80"
-       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/json/json-original.svg"
-       alt="JSON logo" />
 </p>
 
 Welcome to the Object-Oriented Programming (OOP) repository!
