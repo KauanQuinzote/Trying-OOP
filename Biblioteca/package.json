@@ -2,12 +2,12 @@
   "name": "biblioteca",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "../views/interface.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "auan Domingues",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^24.5.1",

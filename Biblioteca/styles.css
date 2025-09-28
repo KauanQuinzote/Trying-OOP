@@ -1,4 +1,8 @@
 body {
-    background-color: rgb(208, 235, 243);
+    background-color: rgb(189, 255, 214);
+    
+    #ano {
+        width: 150px;
+    }
 }
 
