@@ -102,10 +102,10 @@ function handleDevolverLivro() {
     // A. Controller: Pega os dados do DOM
     // OBSERVAÇÃO: Mudei o .value do usuarioNome e livroTitulo para refletir o seu código original.
     const usuarioNome = document.getElementById('usuarioDevolucao').value.trim();
-    const exemplarTitulo = document.getElementById('exemplarSelect').value;
+    const tituloLivro = document.getElementById('exemplarSelect').value;
 
     // Validação básica da UI (campos vazios)
-    if (!usuarioNome || !exemplarTitulo) {
+    if (!usuarioNome || !tituloLivro) {
         alert("Preencha todos os campos e selecione o exemplar!");
         return;
     }
@@ -113,12 +113,12 @@ function handleDevolverLivro() {
     // B. Controller: Chama o Use Case
     try {
         // O use case fará: busca do user/livro/exemplar, validações, e a chamada a bib.devolver.
-        devolverLivro(usuarioNome, livroTitulo, exemplarId);
+        devolverLivro(usuarioNome, tituloLivro);
 
         // C. Controller: Atualização da UI (se for bem-sucedido)
         atualizarTabelaUsuarios();
         atualizarTabelaLivros();
-        alert(`Livro "${livroTitulo}" (Exemplar #${exemplarId}) devolvido por ${usuarioNome}.`);
+        alert(`Livro "${tituloLivro}" devolvido por ${usuarioNome}.`);
 
         // Limpar campos
         document.getElementById('usuarioEmprestimo').value = '';
@@ -160,7 +160,6 @@ function atualizarTabelaUsuarios() {
     tbody.innerHTML = ''; // limpa tabela
 
     for (const user of bib.usuarios.values()) {
-        console.log(user);
         // Buscar todos os livros que o usuário está com empréstimo
         const livrosEmprestados = Array.from(bib.emprestimos.values())
             .filter(e => e.usuario.nome === user.nome)

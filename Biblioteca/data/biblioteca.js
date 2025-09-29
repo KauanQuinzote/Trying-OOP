@@ -48,17 +48,18 @@ export class Biblioteca {
     devolver (aluno, exemplar, dataDevolucao = new Date()) {
         for (const [id, emprestimo] of this.emprestimos) {
             if (emprestimo.usuario.nome === aluno.nome) {
-                if (periodo = dataDevolucao.getTime() - emprestimo.dataInicio.getTime() > diasAtraso) {
+                const periodo = dataDevolucao.getTime() - emprestimo.dataInicio.getTime();
+                if (periodo > Biblioteca.diasAtraso) {
                     blockUser(aluno.id, periodo);
                     throw Error("Usuário devolveu o livro atrasado! Ficará Supenso por " + periodo + " dias.    ");
                 }
 
                 if (exemplar.estado === "Danificado") {
-                    exemplar.estado = "Danificado";
                     throw Error("O exemplar está danificado! Não poderá mais ser emprestado.");
                 }
                 aluno.emprestimos_realizados--;
                 exemplar.estado = "Disponível";
+                bib.emprestimos.delete(emprestimo.id_emprestimo);
             }
         }
     }
