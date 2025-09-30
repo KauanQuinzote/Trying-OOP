@@ -1,3 +1,8 @@
+/* Card header customizado para cor #215A36 e texto branco */
+.card-header {
+    background-color: #215A36 !important;
+    color: #fff !important;
+}
 body {
     background-color: rgb(189, 255, 214);
     

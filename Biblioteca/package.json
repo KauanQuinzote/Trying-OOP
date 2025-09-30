@@ -2,19 +2,21 @@
   "name": "biblioteca",
   "version": "1.0.0",
   "description": "",
-  "main": "../views/interface.js",
+  "main": "interface.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "auan Domingues",
+  "author": "Kauan Domingues",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^24.5.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7"
   },
   "dependencies": {
     "bootstrap": "^5.3.8"
-  }
+  },
+  "type": "module"
 }
