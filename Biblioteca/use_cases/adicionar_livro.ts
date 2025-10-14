@@ -1,8 +1,8 @@
 // Os imports devem ser corrigidos para apontar para os arquivos TypeScript (sem .js)
 // Assumindo que suas classes estão em '../data/'
-import { Livro } from '../data/livro';
-import { Exemplar } from '../data/exemplar';
-import { bib } from '../data/biblioteca'; // A instância da Biblioteca
+import { Livro } from '../entities/livro';
+import { Exemplar } from '../entities/exemplar';
+import { bib } from '../entities/biblioteca'; // A instância da Biblioteca
 
 /**
  * Adiciona um novo livro e um exemplar inicial à biblioteca.

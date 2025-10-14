@@ -4,12 +4,13 @@ import { adicionarLivro } from './use_cases/adicionar_livro';
 import { adicionarUsuario } from './use_cases/adicionar_usuario';
 import { emprestarLivro } from './use_cases/emprestar_livro';
 import { devolverLivro } from './use_cases/devolver_livro';
+import { reservarLivro } from './use_cases/reservar_livro';
 
-import { bib, popularBaseDados } from './data/biblioteca'; // bib e popularBaseDados no mesmo arquivo
-import { Livro } from './data/livro'; // Necessário para tipar o loop
-import { Usuario } from './data/usuario'; // Necessário para tipar o loop
-import { Emprestimo } from './data/emprestimo'; // Necessário para tipar o loop
-import { Exemplar } from './data/exemplar'; // Necessário para tipar o loop
+import { bib, popularBaseDados } from './entities/biblioteca'; // bib e popularBaseDados no mesmo arquivo
+import { Livro } from './entities/livro'; // Necessário para tipar o loop
+import { Usuario } from './entities/usuario'; // Necessário para tipar o loop
+import { Emprestimo } from './entities/emprestimo'; // Necessário para tipar o loop
+import { Exemplar } from './entities/exemplar'; // Necessário para tipar o loop
 
 
 // --- Função Auxiliar para obter valores do DOM com tipagem ---
@@ -162,17 +163,8 @@ function handleReservarLivro(): void {
     }
 
     try {
-        const usuario = Array.from(bib.getUsers().values()).find(u => u.nome === usuarioNome);
-        if (!usuario) {
-            throw new Error(`Usuário "${usuarioNome}" não encontrado.`);
-        }
 
-        const livro = Array.from(bib.getLivros().values()).find(l => l.titulo === titulo);
-        if (!livro) {
-            throw new Error(`Livro "${titulo}" não encontrado.`);
-        }
-
-        bib.reservar(usuario, livro);
+        reservar(usuarioNome, titulo);
         alert(`Livro "${titulo}" reservado para ${usuarioNome}.`);
 
     } catch (error) {

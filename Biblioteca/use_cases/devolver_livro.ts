@@ -1,8 +1,8 @@
 // Imports corrigidos para TypeScript
-import { bib } from '../data/biblioteca';
-import { Usuario } from '../data/usuario';
-import { Livro } from '../data/livro';
-import { Exemplar } from '../data/exemplar';
+import { bib } from '../entities/biblioteca';
+import { Usuario } from '../entities/usuario';
+import { Livro } from '../entities/livro';
+import { Exemplar } from '../entities/exemplar';
 
 
 /**

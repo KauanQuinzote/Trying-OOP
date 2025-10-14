@@ -1,6 +1,6 @@
 // Imports corrigidos para TypeScript
-import { Usuario } from '../data/usuario'; 
-import { bib } from '../data/biblioteca'; 
+import { Usuario } from '../entities/usuario'; 
+import { bib } from '../entities/biblioteca'; 
 
 /**
  * Adiciona um novo usuário à biblioteca.

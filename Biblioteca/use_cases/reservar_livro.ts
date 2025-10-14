@@ -1,5 +1,5 @@
-import { Livro } from '../data/livro';
-import { bib } from '../data/biblioteca'; // A instância da Biblioteca
+import { Livro } from '../entities/livro';
+import { bib } from '../entities/biblioteca'; // A instância da Biblioteca
 
 export function reservarLivro(usuarioNome: string, titulo: string): void {
     const usuario = Array.from(bib.getUsers().values()).find(u => u.nome === usuarioNome);
