@@ -5,10 +5,6 @@ export interface DocumentInterface {
   readonly created_at: Date;
   readonly updated_at: Date;
   author: string;
-  opened: boolean;
-  processed: boolean;
-  saved: boolean;
-  closed: boolean;
 
   open(): void;
   process(): void;

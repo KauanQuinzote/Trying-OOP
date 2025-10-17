@@ -5,52 +5,62 @@ export class DocumentEntity implements DocumentInterface {
   public readonly id: string;
   public title: string;
   public content: string;
-  private readonly created_at: Date;
-  private readonly updated_at: Date;
+  public readonly created_at: Date;
+  private _updated_at: Date;
+  public get updated_at(): Date { return this._updated_at; }
   public readonly author: string;
 
-  private readonly opened: boolean;
-  private readonly processed: boolean;
-  private readonly saved: boolean;
-  private readonly closed: boolean;
+  private opened: boolean;
+  private processed: boolean;
+  private saved: boolean;
 
   constructor(
-    id: string = randomUUID(),
     title: string,
     content: string,
     created_at: Date = new Date(),
     updated_at: Date = new Date(),
     author: string,
-    opened: boolean,
-    processed: boolean,
-    saved: boolean,
-    closed: boolean
-  ) {
-    this.id = id;
+
+    ) {
+    this.id = randomUUID();
     this.title = title;
     this.content = content;
-    this.created_at = created_at;
-    this.updated_at = updated_at;
+    this.created_at = new Date();
+    this._updated_at = new Date();
     this.author = author;
-    this.opened = opened;
-    this.processed = processed;
-    this.saved = saved;
-    this.closed = closed;
+    this.opened = false;
+    this.processed = false;
+    this.saved = false;
   }
 
   open(): void {
+    if (this.opened) 
+      throw new Error('Document is already open.');
+    
     this.opened = true;
   }
 
   process(): void {
+    if (!this.opened)
+      throw new Error('Document must be opened before processing.');
+
     this.processed = true;
   }
 
   save(): void {
+    if (!this.processed)
+      throw new Error('Document must be processed before saving.');
+    this._updated_at = new Date();
     this.saved = true;
   }
 
   close(): void {
-    this.closed = true;
+    if (!this.saved)
+      throw new Error('Document must be saved before closing.');
+
+    console.log('Document closed successfully.');
+    this.processed = false;
+    this.saved = false;
+    this.opened = false;
   }
 }
