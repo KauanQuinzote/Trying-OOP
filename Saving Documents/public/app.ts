@@ -122,6 +122,7 @@ function displayDocuments(documents: Document[]): void {
       <p><strong>Conteúdo:</strong> ${doc.content}</p>
       <p><strong>Autor:</strong> ${doc.author}</p>
       <div class="meta">
+        <button class="btn-edit btn-secondary">Editar</button>
         <span>Criado: ${formatDate(doc.created_at)}</span>
         <span>Atualizado: ${formatDate(doc.updated_at)}</span>
       </div>
@@ -131,6 +132,3 @@ function displayDocuments(documents: Document[]): void {
 
 // Event listener para botão de carregar
 loadButton.addEventListener('click', loadDocuments);
-
-// Carregar documentos ao iniciar
-loadDocuments();

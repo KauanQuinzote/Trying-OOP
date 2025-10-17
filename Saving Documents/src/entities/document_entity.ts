@@ -47,7 +47,7 @@ export class DocumentEntity implements DocumentInterface {
     this.processed = true;
   }
 
-  save(): void {
+  mark_as_save(): void {
     if (!this.processed)
       throw new Error('Document must be processed before saving.');
     this._updated_at = new Date();
