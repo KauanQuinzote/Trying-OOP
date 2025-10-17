@@ -8,6 +8,6 @@ export interface DocumentInterface {
 
   open(): void;
   process(): void;
-  save(): void;
+  mark_as_save(): void;
   close(): void;
 }
