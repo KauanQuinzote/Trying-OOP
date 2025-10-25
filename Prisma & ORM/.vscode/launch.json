@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug TypeScript",
+            "type": "node",
+            "request": "launch",
+            "runtimeArgs": [
+                "--import",
+                "tsx"
+            ],
+            "args": [
+                "${workspaceFolder}/main.ts"
+            ],
+            "cwd": "${workspaceFolder}",
+            "internalConsoleOptions": "openOnSessionStart",
+            "skipFiles": [
+                "<node_internals>/**",
+                "node_modules/**"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}

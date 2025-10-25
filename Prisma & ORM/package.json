@@ -1,0 +1,25 @@
+{
+  "name": "prisma-orm-project",
+  "version": "1.0.0",
+  "description": "Projeto Node.js com Prisma ORM",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx main.ts",
+    "start": "tsx main.ts"
+  },
+  "keywords": [
+    "prisma",
+    "orm",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.17.1",
+    "prisma": "^6.17.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "tsx": "^4.20.6"
+  }
+}
